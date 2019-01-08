@@ -1,0 +1,78 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>{{ .Title }} | {{ .Site.Title }}</title>
+
+  {{ .Hugo.Generator }}
+
+  {{ with .Site.Params.description }}
+  <meta name="description" content="{{ . }}">
+  {{ end }}
+
+  <!-- Google / Search Engine Tags -->
+  <meta itemprop="name" content="Zamenhof.net - Language Lessons Online with YOUR students and OUR teachers.">
+  <meta itemprop="description" content="Zamenhof.net is a White-label Online Language Tutoring Platform for Language Schools.">
+  <meta itemprop="image" content="https://zamenhof.net/logo_zam_meta.png">
+
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://zamenhof.net">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Zamenhof.net - Language Lessons Online with YOUR students and OUR teachers.">
+  <meta property="og:description" content="Zamenhof.net is a White-label Online Language Tutoring Platform for Language Schools.">
+  <meta property="og:image" content="https://zamenhof.net/logo_zam_meta.png">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Zamenhof.net - Language Lessons Online with YOUR students and OUR teachers.">
+  <meta name="twitter:description" content="Zamenhof.net is a White-label Online Language Tutoring Platform for Language Schools.">
+  <meta name="twitter:image" content="https://zamenhof.net/logo_zam_meta.png">
+
+  {{/* https://www.emergeinteractive.com/insights/detail/The-Essentials-of-FavIcons */}}
+
+  {{ $ioriginal := resources.Get "apple-icon-512x512.png" }}
+  {{ $original := resources.Get "favicon-512x512.png" }}
+  {{ $Scratch := .Scratch }}
+
+  {{ range .Site.Params.iphone_sizes }}
+  {{ $Scratch.Set "image" ($ioriginal.Fit .) }}{{ $image := $Scratch.Get "image" }}
+  <link rel="apple-touch-icon" href="{{ $image.RelPermalink | absURL }}" sizes="{{ . }}">
+  {{ end }}
+
+  {{ range .Site.Params.favicon_sizes }}
+  {{ $Scratch.Set "image" ($original.Fit .) }}{{ $image := $Scratch.Get "image" }}
+  <link rel="icon" href="{{ $image.RelPermalink | absURL }}" sizes="{{ . }}">
+  {{ end }}
+
+  {{ $bootstrapCss := "css/bootstrap.min.css" }}
+  <link rel="stylesheet" href="{{ $bootstrapCss | absURL }}" />
+
+{{ if .Site.IsServer }}
+
+  {{ $vars := printf "@import 'css/custom.css' " | resources.FromString "css/custom.css" }}
+  {{ $style := $vars | resources.PostCSS (dict "noMap" false) | fingerprint }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}" />
+
+  {{ range .Page.Params.css_files }}
+  {{ $vars := printf "@import '%s';" . | resources.FromString . }}
+  {{ $style := $vars | resources.PostCSS (dict "noMap" false) | fingerprint }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}" />
+  {{ end }}
+
+{{ else }}
+  <link rel="stylesheet" href="{{ $bootstrapCss | absURL }}" />
+  {{ $vars := printf "@import 'css/custom.css' " | resources.FromString "css/custom.css" }}
+  {{ $style := $vars | resources.PostCSS (dict "noMap" true) | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}" />
+  {{ range .Page.Params.css_files }}
+  {{ $vars := printf "@import '%s';" . | resources.FromString . }}
+  {{ $style := $vars | resources.PostCSS (dict "noMap" true) | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}" />
+  {{ end }}
+{{ end }}
+
+  <meta name="theme-color" content="#1e3a6e" />
+
+  <link href="/font/rawline/css/rawline.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,300italic,400italic,600italic,700italic|Roboto+Mono:300,400|Lato:400" rel="stylesheet" type="text/css">
+</head>

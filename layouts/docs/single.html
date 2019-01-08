@@ -1,0 +1,19 @@
+{{- define "main" -}}
+
+<main class="docs-page">
+    <div class="docs-cats">
+        {{ partial "list-of-cat.html" (dict "url" "/docs/" "Site" .Site ) }}
+    </div>
+
+    {{ if .Params.hide_toc }}{{else}}
+    <div class="docs-toc">
+        {{ .TableOfContents }}
+    </div>
+    {{ end }}
+
+    <div class="docs-content col-md-7 col-sm-7 col-xs-12 offset-md-3 offset-sm-3">
+        {{ .Content }}
+    </div>
+</main>
+
+{{- end -}}

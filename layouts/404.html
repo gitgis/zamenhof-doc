@@ -1,0 +1,43 @@
+{{ define "main"}}
+<main id="main">
+    <div class="error-message">
+        <h1>Page Not Found 😟</h1>
+        <p>
+            If this keeps happening, please drop a line to <a style="" href="mailto:service@zamenhof.net" target="_top">service@zamenhof.net</a>
+            <br>
+            Meanwhile, <a href="{{ "/" | relURL }}">click here to go home</a>.
+        </p>
+    </div>
+</main>
+<style>
+    .error-message {
+        text-align: center;
+        /*position: absolute;*/
+        width: 100%;
+        max-width: 800px;
+        height: 80vh;
+        margin: 17% auto;
+    }
+
+    .error-message h1 {
+        color: #1e3a6e;
+        font-size: 36px;
+        font-weight: 400;
+        margin: 24px;
+        text-align: center;
+    }
+
+    .error-message p {
+        color: #B8BECC;
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 40px;
+    }
+
+    .error-message a:link, .error-message a:visited {
+        color: #1e3a6e !important;
+        text-decoration: underline !important;
+        font-weight: 300 !important;
+    }
+</style>
+{{ end }}

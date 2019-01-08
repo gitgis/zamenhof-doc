@@ -1,0 +1,80 @@
+
+.navbar-sky .navbar-nav .nav-link {
+    line-height: 24px;
+    color: #fff !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-family: "Open Sans", open-sans, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 8px 15px 15px;
+}
+
+.navbar-sky .navbar-collapse {
+    margin-top: 14px;
+}
+
+@media (max-width: 991.9px) {
+    .navbar-sky .navbar-collapse {
+        /*        border-top: 1px solid #000;*/
+    }
+}
+
+.bg-sky {
+    background-color: rgb(28, 66, 120);
+}
+
+.navbar-brand {
+    position: relative;
+    height: 71px;
+    padding: 15px;
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+    .navbar-brand {
+        height: 86px;
+    }
+    .navbar-brand {
+        width: 100%;
+        text-align: center;
+        float: none;
+        display: flex;
+        justify-content: center;
+    }
+    .navbar-toggler {
+        display: none;
+    }
+    .collapse {
+        display: block;
+    }
+    .navbar-sky .navbar-collapse {
+        margin-top: 0;
+    }
+    .navbar-nav  {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+.navbar__logo {
+    height: 100%;
+}
+
+@media (min-width: 768px) {
+    .nav-item--login {
+        border: 1px solid #fff;
+        border-radius: 22px;
+        height: 40px;
+        text-align: center;
+        width: 102px;
+    }
+
+    .nav-item--request-access {
+        width: 173px;
+        border: 1px solid #f7931d;
+        border-radius: 22px;
+        height: 40px;
+        text-align: center;
+        margin-left: 10px;
+        background: #f7931d;
+    }
+}

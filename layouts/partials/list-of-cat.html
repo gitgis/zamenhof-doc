@@ -1,0 +1,30 @@
+{{ $file := printf "%s_index.md" .url }}
+{{ with .Site.GetPage $file }}
+<a href="{{ .RelPermalink }}">
+    <strong>{{ .Title }}</strong>
+</a>
+
+{{ if .Sections }}
+<ul>
+    {{ range .Sections }}
+    <li>
+        {{ partial "list-of-cat.html" (dict "url" .RelPermalink "Site" .Site ) }}
+    </li>
+    {{ end }}
+</ul>
+{{ end }}
+
+{{ if .Pages }}
+<ul>
+    {{ range .Pages }}
+    {{ if eq "docs" .Type }}
+
+    <li>
+        <a href="{{.Permalink}}">{{.Title}}</a>
+    </li>
+    {{ end }}
+    {{ end }}
+</ul>
+{{ end }}
+
+{{ end }}
