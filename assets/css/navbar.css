@@ -1,3 +1,4 @@
+@import "search.css";
 
 .navbar-sky .navbar-nav .nav-link {
     line-height: 24px;
@@ -27,6 +28,9 @@
     position: relative;
     height: 71px;
     padding: 15px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap
 }
 
 @media (max-width: 991px) and (min-width: 768px) {
@@ -77,4 +81,36 @@
         margin-left: 10px;
         background: #f7931d;
     }
+}
+
+.navbar__logo {
+    margin-right: 30px
+}
+
+.navbar-brand__title {
+    text-align: center
+}
+
+@media (max-width: 575.9px) {
+    .navbar-brand {
+        flex-direction: row;
+        max-width: calc(100vw - 120px)
+    }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+    .navbar-brand__title {
+        width: 100%;
+        margin-left: 0
+    }
+}
+
+@media (min-width: 576px) {
+    .navbar-expand-lg .navbar-collapse.navbar-categories:not(.show) {
+        display: none !important
+    }
+}
+
+.navbar-categories ul {
+    list-style: none
 }

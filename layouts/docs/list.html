@@ -1,33 +1,37 @@
 {{- define "main" -}}
 
-<main class="docs-page">
-    <div class="docs-cats">
-        {{ partial "list-of-cat.html" (dict "url" "/docs/" "Site" .Site ) }}
-    </div>
+<main class="docs-page container">
+    <div class="row">
+        <div class="col-md-3 col-sm-3 d-none d-sm-block">
+            <div class="docs-cats">
+                {{ partial "list-of-cat.html" (dict "url" "/docs/" "Site" .Site ) }}
+            </div>
+        </div>
 
-    {{ if .Params.hide_toc }}{{else}}
-    <div class="docs-toc">
-        {{ .TableOfContents }}
-    </div>
-    {{ end }}
-
-    <div class="docs-content col-md-7 col-sm-7 col-xs-12 offset-md-3 offset-sm-3">
-        {{ if .Content }}
-        {{ else }}
-        {{ if .Pages }}
-        <h1>Subpages</h1>
-        <ul>
-            {{ range .Pages }}
-            <li>
-                <a href="{{.Permalink}}">{{.Title}}</a>
-            </li>
+        <div class="docs-content col-md-7 col-sm-9 col-xs-12 order-2 order-sm-0">
+            {{ if .Content }}
+                {{ .Content }}
+            {{ else }}
+            {{ if .Pages }}
+            <h1>Subpages</h1>
+            <ul>
+                {{ range .Pages }}
+                <li>
+                    <a href="{{.Permalink}}">{{.Title}}</a>
+                </li>
+                {{ end }}
+            </ul>
             {{ end }}
-        </ul>
-        {{ end }}
-        {{ end }}
+            {{ end }}
+        </div>
 
-
-        {{ .Content }}
+        {{ if .Params.hide_toc }}{{else}}
+        <div class="col-md-2 d-sm-none d-md-block">
+            <div class="docs-toc">
+                {{ .TableOfContents }}
+            </div>
+        </div>
+        {{ end }}
     </div>
 </main>
 

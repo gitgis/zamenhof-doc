@@ -4,11 +4,22 @@
 
     <a class="navbar-brand" href="/">
       <img src="/img/logo.svg" alt="" class="navbar__logo">
+      <div class="navbar-brand__title">
+        {{.Site.Title}}
+      </div>
     </a>
 
+    <div class="collapse navbar-collapse navbar-categories" id="navbarCategories">
+    </div>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCategories" aria-controls="navbarCategories" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
     <form onsubmit="return false;" class="search-form">
-      <input name="q" placeholder="Search for a topic or question..." autocomplete="off" />
-      <button type="submit">Search</button>
+      <input name="q" placeholder="Search for a topic or question..." autocomplete="off" class="form-control my-2 mr-2">
+      <button type="submit" class="btn btn-primary my-2">Search</button>
     </form>
 
   </div>
