@@ -39,16 +39,6 @@
 }
 
 @media (max-width: 991px) and (min-width: 768px) {
-    .navbar-brand {
-        height: 86px;
-    }
-    .navbar-brand {
-        width: 100%;
-        text-align: center;
-        float: none;
-        display: flex;
-        justify-content: center;
-    }
     .navbar-toggler {
         display: none;
     }
@@ -88,14 +78,6 @@
     }
 }
 
-.navbar__logo {
-    margin-right: 30px
-}
-
-.navbar-brand__title {
-    text-align: center
-}
-
 @media (max-width: 575.9px) {
     .navbar-brand {
         flex-direction: row;
@@ -125,9 +107,31 @@
     border-right: 1px solid #DDD;
 }
 
+.nav-left-column {
+    display: flex;
+}
+.navbar-brand {
+    flex: 1;
+}
+
+
 .teacher-link-column {
     font-weight: 600;
     font-size: 14px;
     color: #777;
     padding: 10px;
+}
+
+.container-fluid--zamenhof {
+    display: flex;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container-fluid--zamenhof > .row {
+    flex: 1 1 100%;
+    align-items: center;
 }

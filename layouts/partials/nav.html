@@ -1,40 +1,37 @@
-<nav class="navbar navbar-expand-lg navbar-dark navbar-sky">
+<nav class="navbar navbar-expand-lg navbar-light navbar-sky">
 
-  <div class="container-fluid">
-
-      <div class="col-sm-3 col-xs-12 nav-left-column">
-          <a class="navbar-brand" href="/">
-              <img src="/img/logo.svg" alt="" class="navbar__logo">
-          </a>
-          <div class="collapse navbar-collapse navbar-categories" id="navbarCategories">
+  <div class="container-fluid--zamenhof">
+      <div class="row">
+          <div class="col-md-3 col-sm-3 col-xs-12 nav-left-column">
+              <a class="navbar-brand" href="/">
+                  <img src="/img/logo.svg" alt="" class="navbar__logo">
+              </a>
+              <button class="navbar-toggler border-0 d-block d-sm-none" type="button" data-toggle="collapse" data-target="#navbarCategories" aria-controls="navbarCategories" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
           </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCategories" aria-controls="navbarCategories" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
+          <div class="collapse navbar-collapse navbar-categories" id="navbarCategories">
+              {{ partial "list-of-cat.html" (dict "url" "/docs/" "Site" .Site "activeURL" $.URL ) }}
+          </div>
+          <div class="col">
+              <form onsubmit="return false;" class="search-form">
+                  <div class="input-group">
+                      <span class="input-group-prepend">
+                          <div class="input-group-text bg-white border-0">
+                              <svg class="search-form__icon" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+                                  <use xlink:href="/img/fa/solid.svg#search"></use>
+                              </svg>
+                          </div>
+                      </span>
+                      <input class="form-control py-2 border-0" name="q" placeholder="Search documentation..." autocomplete="off" >
+                      <!--<button type="submit" class="btn btn-primary my-2">Search</button>-->
+                  </div>
+              </form>
+          </div>
+          <div class="col-xs-12 teacher-link-column">
+              <a href="https://admin.zamenhof.net/login#teacher">Login to Teacher Account</a>
+          </div>
       </div>
-      <div class="col">
-          <form onsubmit="return false;" class="search-form">
-              <div class="input-group">
-                  <span class="input-group-prepend">
-                      <div class="input-group-text bg-white border-0">
-                          <svg class="search-form__icon" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                              <use xlink:href="/img/fa/solid.svg#search"></use>
-                          </svg>
-                      </div>
-                  </span>
-                  <input class="form-control py-2 border-0" name="q" placeholder="Search documentation..." autocomplete="off" >
-                  <!--<button type="submit" class="btn btn-primary my-2">Search</button>-->
-              </div>
-          </form>
-      </div>
-      <div class="col-xs-12 teacher-link-column">
-          <a href="https://admin.zamenhof.net/login#teacher">Login to Teacher Account</a>
-      </div>
-
-
-
-
-
   </div>
 
 </nav>
