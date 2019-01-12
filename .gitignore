@@ -3,3 +3,4 @@
 /resources
 /static/video
 /node_modules
+lunr*.json

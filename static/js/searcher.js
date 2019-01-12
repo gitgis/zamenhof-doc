@@ -3,12 +3,12 @@
     var index;
     var documents;
 
-    function loadIndex() {
+    function loadIndex(indexUrl) {
         if (index) {
             return Promise.resolve(index);
         }
 
-        return fetch("/lunr.json")
+        return fetch(indexUrl)
             .then(function (response) {
                 return response.json()
                     .then(function (docs) {
@@ -34,10 +34,8 @@
             });
     }
 
-
-
-    function performSearch(q) {
-        loadIndex().then(function (index) {
+    function performSearch(q, indexUrl, mainDir) {
+        loadIndex(indexUrl).then(function (index) {
             var results = index.search(q);
             results = results.map(function (result) {
                 var doc = documents.find(function (doc) {return doc.uri == result.ref});
@@ -62,7 +60,7 @@
                 var liElem = document.createElement("li");
                 var aElem = document.createElement("a");
                 liElem.appendChild(aElem);
-                aElem.href = "/docs/"+result.ref.replace(/\/_index$/, '');
+                aElem.href = mainDir+result.ref.replace(/\/_index$/, '/');
                 aElem.innerText = result.title;
 
                 main.querySelector("ul").appendChild(liElem);
@@ -73,15 +71,14 @@
     }
 
     window.addEventListener("load", function() {
-
-        var forms = document.querySelectorAll(".search-form")
+        var mainDir = window.location.pathname.replace(/\/([^\/]+).*/, "/$1");
+        var forms = document.querySelectorAll(".search-form");
         forms.forEach(function (form) {
             form.addEventListener("submit", function () {
                 if (form.elements["q"].value) {
-                    performSearch(form.elements["q"].value)
+                    performSearch(form.elements["q"].value, form.getAttribute("data-index"), mainDir)
                 }
             });
-            console.log(form);
         })
 
 
