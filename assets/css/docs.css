@@ -22,7 +22,8 @@ pre {
 }
 
 .docs-toc a {
-    color: #004ed0 !important;
+    color: #0099e5 !important;
+    text-decoration: none !important;
 }
 .docs-toc ul {
     list-style: none;
@@ -46,8 +47,13 @@ pre {
     text-indent: -10px;
 }
 
+.docs-cats li a {
+    color: #0d2b3e !important;
+    text-decoration: none !important;
+}
 .docs-cats li.active a {
     font-weight: 700;
+    color: #0099e5 !important;;
 }
 
 @media (min-width: 576px) {
@@ -74,7 +80,7 @@ pre {
 
 .docs-left-column {
     background: #F5F7F9;
-    border-right: 1px solid #DDD;
+    border-right: 1px solid #F4F6F8;
 }
 
 @media (min-width: 576px) {

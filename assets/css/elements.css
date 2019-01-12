@@ -9,14 +9,16 @@ html {
 }
 
 body {
-    color: #1e3a6e;
+    color: #373e42;
     font-family: "Montserrat", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
     line-height: 22px;
     font-size: 16px;
 }
 
 a {
-    color: #abb5c4 !important;
+    color: #0099e5 !important;
+    text-decoration: underline !important;
 }
 
 blockquote {
@@ -32,6 +34,7 @@ h1 {
     font-weight: 700;
     text-align: left;
     margin: 0;
+    color: #0d2b3e;
 }
 
 h2 {
@@ -39,6 +42,7 @@ h2 {
     line-height: 40px;
     font-weight: 700;
     text-align: left;
+    color: #0d2b3e;
 }
 
 h3 {
@@ -46,6 +50,11 @@ h3 {
     font-weight: 700;
     text-align: left;
     margin-bottom: 5px;
+    color: #0d2b3e;
+}
+
+h4 {
+    color: #0d2b3e;
 }
 
 ol, ul {
@@ -63,6 +72,7 @@ b, strong {
 summary {
     outline: none;
     user-select: none;
+    color: #0d2b3e;
 }
 
 /*

@@ -1,11 +1,15 @@
 .search-form {
-    display: flex
+    display: flex;
+}
+
+.search-form .form-control {
+    color: #373e42;
 }
 
 .search-form__icon {
     width: 16px;
     height: 16px;
-    fill: #495057;
+    fill: #373e42;
 }
 
 @media (max-width: 991px) {
