@@ -48,18 +48,21 @@
 
             console.log(results);
 
-            var main = document.querySelector("body > main");
+            var toc = document.querySelector("body > main .docs-toc")
+            if (toc) toc.innerHTML = '';
+            var main = document.querySelector("body > main .docs-content");
 
             // main.innerHTML = "<div class='search-results container-fluid'><div class='col-sm-3'></div>" +
             //     "<div class='col'><h1>Search Results</h1><p></p><ul></ul></div></div>";
-            main.innerHTML = "<div class='search-results row'><div class='col-sm-3 docs-left-column'></div>" +
-                "<div class='col'><h1>Search Results</h1><p></p><ul></ul></div></div>";
+            // main.innerHTML = "<div class='search-results row'><div class='col-sm-3 docs-left-column'></div>" +
+            //     "<div class='col docs-content'><h1>Search Results</h1><p></p><ul></ul></div></div>";
+            main.innerHTML = "<h1>Search Results</h1><p></p><ul></ul>";
 
             results.forEach((function (result) {
                 var liElem = document.createElement("li");
                 var aElem = document.createElement("a");
                 liElem.appendChild(aElem);
-                aElem.href = "/docs/"+result.ref;
+                aElem.href = "/docs/"+result.ref.replace(/\/_index$/, '');
                 aElem.innerText = result.title;
 
                 main.querySelector("ul").appendChild(liElem);
