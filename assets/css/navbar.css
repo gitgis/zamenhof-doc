@@ -121,8 +121,9 @@
 .teacher-link-column a {
     display: inline-flex;
     align-items: center;
-    font-weight: 600;
+    font-weight: 300;
     font-size: 14px;
+    text-decoration: none !important;
     color: #0099e5 !important;
 }
 .teacher-link-column svg {

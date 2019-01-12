@@ -51,6 +51,9 @@ pre {
     color: #0d2b3e !important;
     text-decoration: none !important;
 }
+.docs-cats li a, summary {
+    font-weight: 500;
+}
 .docs-cats li.active a {
     font-weight: 700;
     color: #0099e5 !important;;

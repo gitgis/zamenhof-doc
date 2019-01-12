@@ -4,6 +4,7 @@
 
 .search-form .form-control {
     color: #373e42;
+    font-weight: 300;
 }
 
 .search-form__icon {

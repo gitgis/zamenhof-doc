@@ -12,7 +12,7 @@
             <details>
         {{ end }}
             <summary>
-                {{ if .Title }}<strong>{{ .Title }}</strong>
+                {{ if .Title }}{{ .Title }}
                 {{ else }}{{ .RelPermalink }}{{ end }}
             </summary>
             {{ partial "list-of-cat.html" (dict "url" .RelPermalink "Site" .Site "activeURL" $activeURL ) }}
