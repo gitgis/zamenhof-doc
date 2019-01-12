@@ -1,5 +1,10 @@
 @import "search.css";
 
+.navbar-sky {
+    padding: 0 !important;
+    border-bottom: 1px solid #DDD;
+}
+
 .navbar-sky .navbar-nav .nav-link {
     line-height: 24px;
     color: #fff !important;
@@ -113,4 +118,15 @@
 
 .navbar-categories ul {
     list-style: none
+}
+
+.nav-left-column {
+    background: #F5F7F9;
+    border-right: 1px solid #DDD;
+}
+
+.teacher-link-column {
+    font-weight: 600;
+    color: #777;
+    padding: 10px;
 }

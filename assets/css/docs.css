@@ -67,3 +67,14 @@ pre {
 --breakpoint-lg: 992px;
 --breakpoint-xl: 1200px;
 */
+
+.docs-left-column {
+    background: #F5F7F9;
+    border-right: 1px solid #DDD;
+}
+
+@media (min-width: 576px) {
+    .docs-left-column {
+        min-height: calc(100vh - 88px);
+    }
+}

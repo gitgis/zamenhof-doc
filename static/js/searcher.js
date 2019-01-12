@@ -50,7 +50,10 @@
 
             var main = document.querySelector("body > main");
 
-            main.innerHTML = "<div class='search-results container'><div class='col-md-6 col-md-6 col-xs-12 offset-md-3 offset-sm-3'><h1>Search Results</h1><p></p><ul></ul></div></div>";
+            // main.innerHTML = "<div class='search-results container-fluid'><div class='col-sm-3'></div>" +
+            //     "<div class='col'><h1>Search Results</h1><p></p><ul></ul></div></div>";
+            main.innerHTML = "<div class='search-results row'><div class='col-sm-3 docs-left-column'></div>" +
+                "<div class='col'><h1>Search Results</h1><p></p><ul></ul></div></div>";
 
             results.forEach((function (result) {
                 var liElem = document.createElement("li");
