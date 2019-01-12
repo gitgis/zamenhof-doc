@@ -1,14 +1,22 @@
+{{ $activeURL := .activeURL }}
 {{ $file := printf "%s_index.md" .url }}
 {{ with .Site.GetPage $file }}
-<a href="{{ .RelPermalink }}">
-    <strong>{{ .Title }}</strong>
-</a>
 
 {{ if .Sections }}
 <ul>
     {{ range .Sections }}
     <li>
-        {{ partial "list-of-cat.html" (dict "url" .RelPermalink "Site" .Site ) }}
+        {{ if hasPrefix $activeURL .RelPermalink }}
+            <details open>
+        {{ else }}
+            <details>
+        {{ end }}
+            <summary>
+                {{ if .Title }}<strong>{{ .Title }}</strong>
+                {{ else }}{{ .RelPermalink }}{{ end }}
+            </summary>
+            {{ partial "list-of-cat.html" (dict "url" .RelPermalink "Site" .Site "activeURL" $activeURL ) }}
+        </details>
     </li>
     {{ end }}
 </ul>
@@ -19,8 +27,11 @@
     {{ range .Pages }}
     {{ if eq "docs" .Type }}
 
-    <li>
-        <a href="{{.Permalink}}">{{.Title}}</a>
+    <li {{ if eq $activeURL .RelPermalink }}class="active"{{ end }}>
+        <a href="{{.Permalink}}">
+            {{ if .Title }}{{ .Title }}
+            {{ else }}{{ .RelPermalink }}{{ end }}
+        </a>
     </li>
     {{ end }}
     {{ end }}

@@ -1,5 +1,5 @@
 ---
-title: "Subcategory"
+title: "Nested Subcategory"
 type: "docs"
 ---
 DDD

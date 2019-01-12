@@ -46,6 +46,10 @@ pre {
     text-indent: -10px;
 }
 
+.docs-cats li.active a {
+    font-weight: 700;
+}
+
 @media (min-width: 576px) {
     .docs-cats {
         position: sticky;

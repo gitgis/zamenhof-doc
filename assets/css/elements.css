@@ -60,6 +60,12 @@ b, strong {
     font-weight: 700 !important;
 }
 
+summary {
+    outline: none;
+    user-select: none;
+}
+
+/*
 details {
     margin-bottom: 20px;
 }
@@ -87,3 +93,4 @@ summary::after {
 details[open] summary::after {
     transform: rotate(90deg);
 }
+*/
