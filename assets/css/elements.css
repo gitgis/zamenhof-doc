@@ -22,7 +22,7 @@ a {
 }
 
 blockquote {
-    background: url(/img/bg_quote.png) no-repeat left top;
+    background: url(../img/bg_quote.png) no-repeat left top;
     border-left: none;
     padding-left: 7%;
     font-size: 14px;
