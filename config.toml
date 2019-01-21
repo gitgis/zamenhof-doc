@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "http://locahost:1313/docs"
 languageCode = "en-us"
 title = "Zamenhof docs"
 theme = "minimal-bootstrap-hugo-theme"
@@ -8,6 +8,7 @@ theme = "minimal-bootstrap-hugo-theme"
 #  docs = "/:sections/:filename/"
 
 [params]
+  logo = "img/excedo-zamenhof.svg"
   description = "Zamenhof.net docs"
   includeBootstrapJs = true
   iphone_sizes = [ "120x120", "152x152", "180x180" ]

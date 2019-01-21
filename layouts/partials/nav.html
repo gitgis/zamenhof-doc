@@ -7,7 +7,11 @@
       <div class="row">
           <div class="col-md-3 col-sm-3 col-xs-12 nav-left-column">
               <a class="navbar-brand" href="/">
-                  <img src='{{"img/logo.svg" | absURL }}' alt="" class="navbar__logo">
+                  {{ if .Site.Params.logo }}
+                  <img src='{{ .Site.Params.logo | absURL }}' alt="" class="navbar__logo">
+                  {{ else }}
+                  <img src='{{ "img/logo.svg" | absURL }}' alt="" class="navbar__logo">
+                  {{ end }}
               </a>
               <button class="navbar-toggler border-0 d-block d-sm-none" type="button" data-toggle="collapse" data-target="#navbarCategories" aria-controls="navbarCategories" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
