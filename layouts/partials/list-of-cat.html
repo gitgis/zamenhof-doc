@@ -5,7 +5,13 @@
 {{ if .Sections }}
 <ul>
     {{ range .Sections }}
+    {{ if .Params.separator }}
     <li>
+        <header class="docs-cats-separator">{{ .Params.separator }}</header>
+    </li>
+    {{ end }}
+    <li>
+
         {{ if hasPrefix $activeURL .RelPermalink }}
             <details open>
         {{ else }}
@@ -27,6 +33,11 @@
     {{ range .Pages }}
     {{ if eq "docs" .Type }}
 
+    {{ if .Params.separator }}
+    <li>
+        <header class="docs-cats-separator">{{ .Params.separator }}</header>
+    </li>
+    {{ end }}
     <li {{ if eq $activeURL .RelPermalink }}class="active"{{ end }}>
         <a href="{{.Permalink}}">
             {{ if .Title }}{{ .Title }}

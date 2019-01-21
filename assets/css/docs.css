@@ -91,3 +91,12 @@ pre {
         min-height: calc(100vh - 88px);
     }
 }
+
+
+.docs-cats-separator {
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #939da3;
+}
