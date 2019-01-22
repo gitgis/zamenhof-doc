@@ -11,6 +11,9 @@ build_hugo:
   image: monachus/hugo
   stage: build
   script:
+  - apt-get update
+  - apt-get install nodejs
+  - npm install
   - rm public/* -rf
   - node hugo-lunr/bin/index.js -i "content/docs/**" -o static/lunr-docs.json
   - node hugo-lunr/bin/index.js -i "content/docs1/**" -o static/lunr-docs1.json
