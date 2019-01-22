@@ -8,5 +8,5 @@ type: "docs"
 
 Welcome do style docs
 
-* [style](Styleguide)
+* [Styleguide](style)
 * [previous file](old)
