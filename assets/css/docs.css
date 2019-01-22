@@ -101,3 +101,7 @@ pre {
     text-transform: uppercase;
     color: #939da3;
 }
+
+.docs-embed {
+    width: 100%;
+}

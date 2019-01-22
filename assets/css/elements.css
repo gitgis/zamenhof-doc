@@ -54,6 +54,9 @@ h3 {
 }
 
 h4 {
+    font-size: 12px;
+    font-weight: 700;
+    text-align: left;
     color: #0d2b3e;
 }
 
@@ -104,3 +107,13 @@ details[open] summary::after {
     transform: rotate(90deg);
 }
 */
+
+.docs-header--anchor a {
+    display: none;
+}
+.docs-header--anchor:hover a {
+    display: inline;
+    vertical-align: middle;
+    line-height: 12px;
+    font-size: 12px;
+}
