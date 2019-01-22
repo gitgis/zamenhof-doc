@@ -1,6 +1,6 @@
 {{- define "main" -}}
 
-{{ $mainDir := replaceRE "(/[^/]*)/.*" "$1/" $.URL }}
+{{ $mainDir := replaceRE "(/[^/]*)(/[^/]*)/.*" "$2/" $.URL }}
 
 <main class="docs-page container-fluid">
     <div class="row">

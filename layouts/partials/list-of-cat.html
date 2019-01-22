@@ -1,5 +1,6 @@
 {{ $activeURL := .activeURL }}
 {{ $file := printf "%s_index.md" .url }}
+
 {{ with .Site.GetPage $file }}
 
 {{ if .Sections }}
@@ -11,7 +12,6 @@
     </li>
     {{ end }}
     <li>
-
         {{ if hasPrefix $activeURL .RelPermalink }}
             <details open>
         {{ else }}
@@ -21,7 +21,8 @@
                 {{ if .Title }}{{ .Title }}
                 {{ else }}{{ .RelPermalink }}{{ end }}
             </summary>
-            {{ partial "list-of-cat.html" (dict "url" .RelPermalink "Site" .Site "activeURL" $activeURL ) }}
+            {{ $url := printf "/%s" .Dir }}
+            {{ partial "list-of-cat.html" (dict "url" $url "Site" .Site "activeURL" $activeURL ) }}
         </details>
     </li>
     {{ end }}
