@@ -1,5 +1,4 @@
-#baseURL = "http://locahost:1313/docs"
-baseURL = "http://zamenhof-doc.gitgis.com/docs"
+baseURL = "http://locahost:1313/docs"
 publishDir = "public/docs"
 disableKinds = "home"
 

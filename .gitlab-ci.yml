@@ -6,6 +6,7 @@ stages:
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
   BUCKET_NAME: zamenhof-doc.gitgis.com
+  BASE_URL: http://locahost:1313/docs
 
 build_hugo:
   image: monachus/hugo
@@ -18,7 +19,7 @@ build_hugo:
   - rm public/* -rf
   - node hugo-lunr/bin/index.js -i "content/docs/**" -o static/lunr-docs.json
   - node hugo-lunr/bin/index.js -i "content/docs1/**" -o static/lunr-docs1.json
-  - hugo
+  - hugo -b $BASE_URL
   artifacts:
     paths:
     - public
