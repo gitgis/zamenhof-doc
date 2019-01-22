@@ -105,3 +105,32 @@ pre {
 .docs-embed {
     width: 100%;
 }
+
+.docs-lightbox img {
+    cursor: zoom-in;
+    max-width: 100%;
+}
+
+.docs-lightbox--modal {
+    cursor: zoom-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5vh 5vw;
+    width: 90vw;
+    height: 90vh;
+}
+
+.docs-lightbox--modal button.close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.docs-lightbox--modal img {
+    max-width: 100%;
+}
+
+.modal-backdrop {
+    background-color: #FFF !important;
+}

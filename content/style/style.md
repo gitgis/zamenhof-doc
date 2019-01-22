@@ -15,7 +15,21 @@ This should not apply to every images. Only the ones with the specific tag
 
 Example: https://stripe.com/docs/dashboard
 
-Screencast: https://www.screencast.com/t/FucjGHUIFZXm 
+Screencast: https://www.screencast.com/t/FucjGHUIFZXm
+
+### Example
+
+{{% lightbox %}}
+![Kitten](https://placekitten.com/g/1600/800)
+{{% /lightbox %}}
+
+### Markdown
+
+{{< highlight markdown "linenos=table" >}}
+{{%/* lightbox */%}}
+![Kitten](https://placekitten.com/g/1600/800)
+{{%/* /lightbox */%}}
+{{< /highlight >}}
 
 ## 2. Titles URL links
 Description: It should be possible to get a #url for every titles.
@@ -84,7 +98,9 @@ Example:
  
 * small: https://stripe.com/docs/terminal/testing 
 * large: https://stripe.com/docs/reporting 
-* with dark rows: https://stripe.com/docs/dashboard/teams 
+* with dark rows: https://stripe.com/docs/dashboard/teams
+
+[See external mmark file](../tables) 
 
 ## 6. Bullet points
 Description: Different types of bullet points.

@@ -1,0 +1,109 @@
+---
+title: "Tables"
+type: "docs"
+---
+
+# Tables
+
+In order to use table markup you need to use __.mmark__ file instead of __.md__
+
+It is still possible to embed tables into .md with HTML tags
+
+## 5. Tables
+Description: our documentation have a lot of tables.
+
+Example:
+
+* small: https://stripe.com/docs/terminal/testing
+* large: https://stripe.com/docs/reporting
+* with dark rows: https://stripe.com/docs/dashboard/teams
+
+
+### Example
+
+#### Large
+
+{.table}
+|                  | Group          | 1-On-1                   |
+| :--------------- | :------------- | :----------------------- |
+| General Topic    | $7.00          | Min $6.00 - Max $8.00  * |
+| Exam Preparation | $8.00          | Min $7.00 - Max $9.00  * |
+| Specialized      | $9.00          | Min $8.00 - Max $10.00 * |
+| Exam Evaluation  | $10.00         | $10                      |
+
+#### Small with hover
+
+{.table .table-sm .table-hover}
+|                  | Group          | 1-On-1                   |
+| :--------------- | :------------- | :----------------------- |
+| General Topic    | $7.00          | Min $6.00 - Max $8.00  * |
+| Exam Preparation | $8.00          | Min $7.00 - Max $9.00  * |
+| Specialized      | $9.00          | Min $8.00 - Max $10.00 * |
+| Exam Evaluation  | $10.00         | $10                      |
+
+#### Striped and bordered
+
+{.table .table-striped .table-bordered}
+|                  | Group          | 1-On-1                   |
+| :--------------- | :------------- | :----------------------- |
+| General Topic    | $7.00          | Min $6.00 - Max $8.00  * |
+| Exam Preparation | $8.00          | Min $7.00 - Max $9.00  * |
+| Specialized      | $9.00          | Min $8.00 - Max $10.00 * |
+| Exam Evaluation  | $10.00         | $10                      |
+
+#### Dark
+
+{.table .table-dark}
+|                  | Group          | 1-On-1                   |
+| :--------------- | :------------- | :----------------------- |
+| General Topic    | $7.00          | Min $6.00 - Max $8.00  * |
+| Exam Preparation | $8.00          | Min $7.00 - Max $9.00  * |
+| Specialized      | $9.00          | Min $8.00 - Max $10.00 * |
+| Exam Evaluation  | $10.00         | $10                      |
+
+### MMark
+
+{{< highlight markdown "linenos=table" >}}
+
+#### Large
+
+{.table}
+|                  | Group          | 1-On-1                   |
+| :--------------- | :------------- | :----------------------- |
+| General Topic    | $7.00          | Min $6.00 - Max $8.00  * |
+| Exam Preparation | $8.00          | Min $7.00 - Max $9.00  * |
+| Specialized      | $9.00          | Min $8.00 - Max $10.00 * |
+| Exam Evaluation  | $10.00         | $10                      |
+
+#### Small with hover
+
+{.table .table-sm .table-hover}
+|                  | Group          | 1-On-1                   |
+| :--------------- | :------------- | :----------------------- |
+| General Topic    | $7.00          | Min $6.00 - Max $8.00  * |
+| Exam Preparation | $8.00          | Min $7.00 - Max $9.00  * |
+| Specialized      | $9.00          | Min $8.00 - Max $10.00 * |
+| Exam Evaluation  | $10.00         | $10                      |
+
+#### Striped and bordered
+
+{.table .table-striped .table-bordered}
+|                  | Group          | 1-On-1                   |
+| :--------------- | :------------- | :----------------------- |
+| General Topic    | $7.00          | Min $6.00 - Max $8.00  * |
+| Exam Preparation | $8.00          | Min $7.00 - Max $9.00  * |
+| Specialized      | $9.00          | Min $8.00 - Max $10.00 * |
+| Exam Evaluation  | $10.00         | $10                      |
+
+#### Dark
+
+{.table .table-dark}
+|                  | Group          | 1-On-1                   |
+| :--------------- | :------------- | :----------------------- |
+| General Topic    | $7.00          | Min $6.00 - Max $8.00  * |
+| Exam Preparation | $8.00          | Min $7.00 - Max $9.00  * |
+| Specialized      | $9.00          | Min $8.00 - Max $10.00 * |
+| Exam Evaluation  | $10.00         | $10                      |
+
+{{< /highlight >}}
+

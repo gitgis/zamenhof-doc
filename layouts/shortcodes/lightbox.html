@@ -1,0 +1,11 @@
+{{ $uniqId := printf "modal_%d" now.UnixNano }}
+
+<div class="docs-lightbox" data-toggle="modal" data-target="#{{ $uniqId }}">
+    {{.Inner}}
+</div>
+<div class="modal" id="{{ $uniqId }}" tabindex="-1" role="dialog">
+    <div class="docs-lightbox--modal" role="document" data-dismiss="modal">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        {{.Inner}}
+    </div>
+</div>
