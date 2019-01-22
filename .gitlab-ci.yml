@@ -12,7 +12,7 @@ build_hugo:
   stage: build
   script:
   - apt-get update
-  - apt-get install nodejs
+  - apt-get install -y nodejs
   - npm install
   - rm public/* -rf
   - node hugo-lunr/bin/index.js -i "content/docs/**" -o static/lunr-docs.json
