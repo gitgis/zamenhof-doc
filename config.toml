@@ -1,8 +1,11 @@
-baseURL = "http://locahost:1313/docs"
+#baseURL = "http://locahost:1313/docs"
+baseURL = "http://zamenhof-doc.gitgis.com/docs"
+publishDir = "public/docs"
+disableKinds = "home"
+
 languageCode = "en-us"
 title = "Zamenhof docs"
 theme = "minimal-bootstrap-hugo-theme"
-disableKinds = "home"
 
 [permalinks]
 #  page = "/:sections/:filename/"

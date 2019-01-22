@@ -1,0 +1,32 @@
+image: "python:latest"
+stages:
+- build
+- deploy
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+  BUCKET_NAME: zamenhof-doc.gitgis.com
+
+build_hugo:
+  image: monachus/hugo
+  stage: build
+  script:
+  - rm public/* -rf
+  - node hugo-lunr/bin/index.js -i "content/docs/**" -o static/lunr-docs.json
+  - node hugo-lunr/bin/index.js -i "content/docs1/**" -o static/lunr-docs1.json
+  - hugo
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
+
+deploy_s3:
+  image: "python:latest"
+  stage: deploy
+  dependencies:
+  - build_hugo      # We want to specify dependencies in an explicit way, to avoid confusion if there are different build jobs
+  before_script:
+  - pip install awscli # Install the SDK
+  script:
+  - aws s3 sync ./public/ s3://${BUCKET_NAME}/ --delete --acl public-read
