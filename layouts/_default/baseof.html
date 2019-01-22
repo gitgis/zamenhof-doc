@@ -4,12 +4,11 @@
 {{ partial "head.html" . }}
 
 <body>
+  {{ if eq .Page.Kind "404" }}{{ else }}
   {{ partial "nav.html" . }}
-
+  {{ end }}
   {{ block "main" . }}{{ end }}
-
   {{ partial "page-footer.html" . }}
-
   {{ partial "bootstrap-js.html" . }}
   <script src="https://unpkg.com/lunr/lunr.js"></script>
   <script src='{{"js/searcher.js" | absURL }}'></script>

@@ -184,8 +184,9 @@ pre {
 }
 
 .docs-footer {
-    background: #F5F7F9;
+    margin: 15px 0;
     padding: 15px;
+    background: #F5F7F9;
 }
 
 .docs-footer > header {
