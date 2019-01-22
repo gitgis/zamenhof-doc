@@ -1,0 +1,6 @@
+{{ if .Get 1 }}
+<h2 class="header-step"><span class="header-step__title">{{ .Get 0 }}</span> {{ .Get 1 }}</h2>
+{{ else }}
+<h2 class="header-step"><span class="header-step__title">{{ .Get 0 }}</span></h2>
+{{ end }}
+{{.Inner}}

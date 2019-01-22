@@ -1,0 +1,47 @@
+---
+title: "Tables"
+type: "docs"
+---
+
+# Lists
+
+To create colored list you need to use __.mmark__ file instead of __.md__
+
+### Example
+
+{.colored-list .question-circle}
+* **point 1**  
+  Each account can only be associated with the tax ID and legal entity of one business. If you operate multiple businesses that have separate tax ID information (e.g., separate legal entities), you must create additional accounts for each.
+* **point 2**  
+  Each account can only be associated with the tax ID and legal entity of one business. If you operate multiple businesses that have separate tax ID information (e.g., separate legal entities), you must create additional accounts for each.
+* **point 3**  
+  Each account can only be associated with the tax ID and legal entity of one business. If you operate multiple businesses that have separate tax ID information (e.g., separate legal entities), you must create additional accounts for each.
+
+{.colored-list .info-circle}
+* **point 1**  
+  Each account can only be associated with the tax ID and legal entity of one business. If you operate multiple businesses that have separate tax ID information (e.g., separate legal entities), you must create additional accounts for each.
+* **point 2**  
+  Each account can only be associated with the tax ID and legal entity of one business. If you operate multiple businesses that have separate tax ID information (e.g., separate legal entities), you must create additional accounts for each.
+* **point 3**  
+  Each account can only be associated with the tax ID and legal entity of one business. If you operate multiple businesses that have separate tax ID information (e.g., separate legal entities), you must create additional accounts for each.
+
+
+### MMark
+
+{{< highlight markdown "linenos=table" >}}
+{.colored-list .question-circle}
+* **point 1**  
+  Each account can only be associated with the tax ID and legal entity of one business. If you operate multiple businesses that have separate tax ID information (e.g., separate legal entities), you must create additional accounts for each.
+* **point 2**  
+  Each account can only be associated with the tax ID and legal entity of one business. If you operate multiple businesses that have separate tax ID information (e.g., separate legal entities), you must create additional accounts for each.
+* **point 3**  
+  Each account can only be associated with the tax ID and legal entity of one business. If you operate multiple businesses that have separate tax ID information (e.g., separate legal entities), you must create additional accounts for each.
+
+{.colored-list .info-circle}
+* **point 1**  
+  Each account can only be associated with the tax ID and legal entity of one business. If you operate multiple businesses that have separate tax ID information (e.g., separate legal entities), you must create additional accounts for each.
+* **point 2**  
+  Each account can only be associated with the tax ID and legal entity of one business. If you operate multiple businesses that have separate tax ID information (e.g., separate legal entities), you must create additional accounts for each.
+* **point 3**  
+  Each account can only be associated with the tax ID and legal entity of one business. If you operate multiple businesses that have separate tax ID information (e.g., separate legal entities), you must create additional accounts for each.
+{{< /highlight >}}

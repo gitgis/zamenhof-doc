@@ -25,7 +25,7 @@
 (function () {
 
     function addAnchor(element) {
-        element.innerHTML = `${element.innerText} <a href="#${element.id}"><i class="fas fa-link"></i></a>`
+        element.innerHTML = `${element.innerHTML} <a href="#${element.id}"><i class="fas fa-link"></i></a>`
         element.classList.add('docs-header--anchor');
     }
 

@@ -114,16 +114,87 @@ Example:
 * Large text results: https://stripe.com/docs/reporting/quickbooks   
 * 1, 2, 3, 4...: https://stripe.com/docs/reporting/quickbooks 
 
+### Example
+
+
+#### Colored
+
+[Colored lists](../lists)
+
+#### Normal categories / sub-categories
+
+* point 1
+ * subpoint 1
+ * subpoint 2    
+   With more text    
+   You need to put two spaces on the    
+   end of line to get    
+   line break  
+* point 2
+ * subpoint 3
+ 
+#### Ordered list
+
+1. Point 1
+ * subpoint 1
+ * subpoint 2  
+2. Point 2
+3. Point 3
+
+
 ## 7. Steps
 Description: Partially colored (#13b57c) titles (#13b57c) 
 
 * Example 1: https://stripe.com/docs/development
 * Example 2: https://stripe.com/docs/webhooks/signatures 
 
+### Example
+
+{{% step "Step1:" "Extract the timestamp and signatures from the header" %}}
+A paragraph of text
+{{% /step %}} 
+
+{{% step "Step2:" %}}
+A paragraph of text
+{{% /step %}} 
+
+## Markdown
+
+{{< highlight markdown "linenos=table" >}}
+{{%/* step "Step1:" "Extract the timestamp and signatures from the header" */%}}
+A paragraph of text
+{{%/* /step */%}} 
+
+{{%/* step "Step2:" */%}}
+A paragraph of text
+{{%/* /step */%}} 
+{{< /highlight >}}
+
 ## 8. Marks in titles
 Description: Check aside “Testing Stripe Issuing” for “Invite only”
 
 Example: https://stripe.com/docs/issuing/testing 
+
+### Example {{% badge "primary" %}}primary{{% /badge %}}
+### Example {{% badge "secondary" %}}secondary{{% /badge %}}
+### Example {{% badge "danger" %}}danger{{% /badge %}}
+### Example {{% badge "warning" %}}warning{{% /badge %}}
+### Example {{% badge "info" %}}info{{% /badge %}}
+### Example {{% badge "light" %}}light{{% /badge %}}
+### Example {{% badge "dark" %}}dark{{% /badge %}}
+
+## Markdown
+
+{{< highlight markdown "linenos=table" >}}
+### Example {{%/* badge "primary" */%}}primary{{%/* /badge */%}}
+### Example {{%/* badge "secondary" */%}}secondary{{%/* /badge */%}}
+### Example {{%/* badge "danger" */%}}danger{{%/* /badge */%}}
+### Example {{%/* badge "warning" */%}}warning{{%/* /badge */%}}
+### Example {{%/* badge "info" */%}}info{{%/* /badge */%}}
+### Example {{%/* badge "light" */%}}light{{%/* /badge */%}}
+### Example {{%/* badge "dark" */%}}dark{{%/* /badge */%}}
+{{< /highlight >}}
+ 
 
 ## 9. Separators
 Description: We need a line separator
@@ -163,7 +234,18 @@ Description: We need a footer with the similar layout. This layout will not appl
 
 Example: https://stripe.com/docs/issuing/authorizations 
 
-Screenshot:  https://www.screencast.com/t/FtURUz0vW0dn 
+Screenshot:  https://www.screencast.com/t/FtURUz0vW0dn
+
+### Example
+
+
+Read on to learn more about transactions or disputes.
+
+{{% next-steps %}}
+[See external mmark file](../tables) 
+[Colored lists](../lists)
+{{% /next-steps %}}
+
 
 ## 12. Slides
 Description: just embed the following slides: embed code

@@ -134,3 +134,38 @@ pre {
 .modal-backdrop {
     background-color: #FFF !important;
 }
+
+
+
+.next-steps {
+    background: #fafdff;
+    border: 1px solid #e9f7ff;
+    border-radius: 5px;
+}
+
+.next-steps p {
+    margin: 0;
+}
+
+.next-steps a {
+    display: block;
+    padding: 15px;
+
+    color: #0099e5 !important;
+    text-decoration: none !important;
+    font-weight: 600;
+}
+
+
+.next-steps a:not(:first-child) {
+    border-top: 1px solid #e7f6ff;
+}
+
+.next-steps a::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+    color: #0099e5;
+    margin-right: 10px;
+
+    content: "\f0a9"; 
+}
