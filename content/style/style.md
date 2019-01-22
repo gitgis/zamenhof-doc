@@ -2,6 +2,7 @@
 title: "Styleguide"
 date: 2019-01-21
 type: "docs"
+docs_footer: true
 ---
 
 # Zamenhof docs styleguide
@@ -229,6 +230,15 @@ Example: https://stripe.com/docs/issuing/testing
 
 Screenshot: https://www.screencast.com/t/vYAAFqip9pu 
 
+To change style use:
+
+{{< highlight "linenos=table" >}}
+hugo gen chromastyles --style=perldoc > static/css/syntax.css
+{{< /highlight >}}
+
+Available [pygments](https://help.farbox.com/pygments.html)
+
+
 ## 11. Next step(s) section
 Description: We need a footer with the similar layout. This layout will not apply to every pages.
 
@@ -238,14 +248,12 @@ Screenshot:  https://www.screencast.com/t/FtURUz0vW0dn
 
 ### Example
 
-
 Read on to learn more about transactions or disputes.
 
 {{% next-steps %}}
 [See external mmark file](../tables) 
 [Colored lists](../lists)
 {{% /next-steps %}}
-
 
 ## 12. Slides
 Description: just embed the following slides: embed code
@@ -254,7 +262,6 @@ Description: just embed the following slides: embed code
 frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
 src="https://docs.google.com/presentation/d/e/2PACX-1vQScsr0Ioy776vlMx0BiZ2pVrtTMbEJ4E0rlqKKQnp5oC6jCQW0FHbMJV30hDR0rm7-Rdx9jntCN0YR/embed?start=false&loop=false&delayms=60000" 
 ></iframe>
-
 
 ### Markdown
 {{< highlight markdown "linenos=table" >}}
@@ -311,3 +318,19 @@ Edit this page
 Example: https://stripe.com/docs/orders
  
 Screenshot: https://www.screencast.com/t/dAscvUdl 
+
+Put docs_footer: true into .md header
+
+{{< highlight "linenos=table" >}}
+---
+docs_footer: true
+---
+{{< /highlight >}}
+
+In the config.toml put:
+
+{{< highlight "linenos=table" >}}
+[params]
+  git_repo = "https://gitlab.com/zamenhof/zamenhof-doc/tree/master/content"
+  slack_link = "https://slack.com/linktoinvite"
+{{< /highlight >}}

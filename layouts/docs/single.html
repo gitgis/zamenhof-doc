@@ -12,6 +12,7 @@
 
         <div class="docs-content col-md-7 col-sm-9 col-xs-12 order-2 order-sm-0">
             {{ .Content }}
+            {{ partial "docs-footer.html" (dict "PageParams" .Params "SiteParams" $.Site.Params "File" .File) }}
         </div>
 
         {{ if .Params.hide_toc }}{{else}}

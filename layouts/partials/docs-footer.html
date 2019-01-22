@@ -1,0 +1,19 @@
+{{ if eq .PageParams.docs_footer true }}
+
+<footer class="docs-footer">
+
+    <header>Questions?</header>
+    <p>
+        We're always happy to help with any questions you might have! 
+        <a href='{{"docs" | absURL}}'>Search our documentation</a>,
+        <a href='/contact'>contact support</a>, or you can also chat live with our staff 
+        <a href="{{ .SiteParams.slack_link }}">on Slack</a>.
+    </p>
+    <div>
+        Was this page helpful? Yes | No
+    </div>
+    <a href="{{ .SiteParams.git_repo }}/{{ .File.Path }}">Edit this page</a>
+   
+</footer>
+
+{{ end }}

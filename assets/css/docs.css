@@ -169,3 +169,25 @@ pre {
 
     content: "\f0a9"; 
 }
+
+.docs-content .highlight {
+    width: 100%;
+    overflow: auto;
+}
+
+.docs-content .lntable {
+    width: 100%;
+}
+
+.docs-content pre.chroma {
+    margin: 0;
+}
+
+.docs-footer {
+    background: #F5F7F9;
+    padding: 15px;
+}
+
+.docs-footer > header {
+    font-weight: 700;
+}
