@@ -35,6 +35,8 @@
     }
 
     function performSearch(q, indexUrl, mainDir) {
+        location.hash = "#/search="+encodeURIComponent(q);
+        
         loadIndex(indexUrl).then(function (index) {
             var results = index.search(q);
             results = results.map(function (result) {
@@ -80,8 +82,11 @@
                 }
             });
         })
-
-
+        
+        if (window.location.hash.startsWith('#/search=')) {
+            var q = decodeURIComponent(window.location.hash.substr('#/search='.length));
+            performSearch(q);
+        }
     });
 
 
