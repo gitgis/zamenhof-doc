@@ -1,12 +1,14 @@
 {{ $mainDir := replaceRE "(/[^/]*)/.*" "$1/" $.URL }}
 {{ $indexName := replaceRE "/([^/]*)/.*" "$1" $.URL }}
 
+{{ $mainUrl := replaceRE "(/[^/]*)(/[^/]*)/.*" "$1/$2/" $.URL }}
+
 <nav class="navbar navbar-expand-lg navbar-light navbar-sky">
 
   <div class="container-fluid--zamenhof">
       <div class="row">
           <div class="col-md-3 col-sm-3 col-xs-12 nav-left-column">
-              <a class="navbar-brand" href="/">
+              <a class="navbar-brand" href="{{ $mainUrl | absURL }}">
                   {{ if .Site.Params.logo }}
                   <img src='{{ .Site.Params.logo | absURL }}' alt="" class="navbar__logo">
                   {{ else }}

@@ -18,7 +18,7 @@
         {{ if .Params.hide_toc }}{{else}}
         <div class="col-md-2 d-sm-none d-md-block">
             <div class="docs-toc">
-                {{ .TableOfContents }}
+                {{ partial "table-of-contents.html" . }}
             </div>
         </div>
         {{ end }}
