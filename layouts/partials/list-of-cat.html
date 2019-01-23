@@ -5,7 +5,7 @@
 
 {{ if .Sections }}
 <ul>
-    {{ range .Sections }}
+    {{ range sort .Sections "Params.menu_order" }}
     {{ if .Params.separator }}
     <li>
         <header class="docs-cats-separator">{{ .Params.separator }}</header>
@@ -31,7 +31,7 @@
 
 {{ if .Pages }}
 <ul>
-    {{ range .Pages }}
+    {{ range sort .Pages "Params.menu_order" }}
     {{ if eq "docs" .Type }}
 
     {{ if .Params.separator }}
