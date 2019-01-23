@@ -19,6 +19,8 @@ build_hugo:
   - rm public/* -rf
   - node hugo-lunr/bin/index.js -i "content/docs/**" -o static/lunr-docs.json
   - node hugo-lunr/bin/index.js -i "content/docs1/**" -o static/lunr-docs1.json
+  - node hugo-lunr/bin/index.js -i "content/excedo/**" -o static/lunr-excedo.json
+  - node hugo-lunr/bin/index.js -i "content/style/**" -o static/lunr-style.json
   - hugo -b $BASE_URL
   artifacts:
     paths:
