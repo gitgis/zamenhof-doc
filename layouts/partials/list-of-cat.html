@@ -1,16 +1,24 @@
 {{ $activeURL := .activeURL }}
+{{ $isMain := .isMain }}
 {{ $file := printf "%s_index.md" .url }}
 
 {{ with .Site.GetPage $file }}
+{{ $thisPage := . }}
 
-{{ if .Sections }}
+{{ $array := (cond (eq true $isMain) (sort (union ( union (slice $thisPage) .Sections ) .Pages) "Params.menu_order") (sort (union .Sections .Pages) "Params.menu_order") ) }}
+
 <ul>
-    {{ range sort .Sections "Params.menu_order" }}
+    {{ range $array }}
+
     {{ if .Params.separator }}
     <li>
         <header class="docs-cats-separator">{{ .Params.separator }}</header>
     </li>
     {{ end }}
+    
+    {{ if ne true .Params.menu_hide }}
+    
+    {{ if (and (eq "section" .Kind) (ne $thisPage . ) ) }}
     <li>
         {{ if hasPrefix $activeURL .RelPermalink }}
             <details open>
@@ -22,23 +30,12 @@
                 {{ else }}{{ .RelPermalink }}{{ end }}
             </summary>
             {{ $url := printf "/%s" .Dir }}
+            {{ if ne . $thisPage }}
             {{ partial "list-of-cat.html" (dict "url" $url "Site" .Site "activeURL" $activeURL ) }}
+            {{ end }}
         </details>
     </li>
-    {{ end }}
-</ul>
-{{ end }}
-
-{{ if .Pages }}
-<ul>
-    {{ range sort .Pages "Params.menu_order" }}
-    {{ if eq "docs" .Type }}
-
-    {{ if .Params.separator }}
-    <li>
-        <header class="docs-cats-separator">{{ .Params.separator }}</header>
-    </li>
-    {{ end }}
+    {{ else if (or (eq $thisPage .) (and (eq "page" .Kind) (eq "docs" .Type) ) ) }}
     <li {{ if eq $activeURL .RelPermalink }}class="active"{{ end }}>
         <a href="{{.Permalink}}">
             {{ if .Title }}{{ .Title }}
@@ -46,8 +43,9 @@
         </a>
     </li>
     {{ end }}
+
+    {{ end }}
+    {{ end }}
+    
     {{ end }}
 </ul>
-{{ end }}
-
-{{ end }}

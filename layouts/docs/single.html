@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-3 col-sm-3 d-none d-sm-block docs-left-column">
             <div class="docs-cats">
-                {{ partial "list-of-cat.html" (dict "url" $mainDir "Site" .Site "activeURL" $.URL ) }}
+                {{ partial "list-of-cat.html" (dict "url" $mainDir "Site" .Site "activeURL" $.URL "isMain" true ) }}
             </div>
         </div>
 
