@@ -73,7 +73,7 @@
     }
 
     window.addEventListener("load", function() {
-        var mainDir = window.location.pathname.replace(/\/([^\/]+).*/, "/$1");
+        var mainDir = window.location.pathname.replace(/\/([^\/]+)\/([^\/]+).*/, "/$1/$2");
         var forms = document.querySelectorAll(".search-form");
         forms.forEach(function (form) {
             form.addEventListener("submit", function () {
@@ -81,12 +81,12 @@
                     performSearch(form.elements["q"].value, form.getAttribute("data-index"), mainDir)
                 }
             });
-        })
-        
-        if (window.location.hash.startsWith('#/search=')) {
-            var q = decodeURIComponent(window.location.hash.substr('#/search='.length));
-            performSearch(q);
-        }
+
+            if (window.location.hash.startsWith('#/search=')) {
+                var q = decodeURIComponent(window.location.hash.substr('#/search='.length));
+                performSearch(q, form.getAttribute("data-index"), mainDir);
+            }
+        });
     });
 
 
