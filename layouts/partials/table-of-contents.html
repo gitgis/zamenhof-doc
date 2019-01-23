@@ -1,5 +1,5 @@
 <!-- ignore empty links with + -->
-{{ $headers := findRE "<h[1-6].*?>(.|\n])+?</h[1-2]>" .Content }}
+{{ $headers := findRE "<h[1-2].+?>(.|\n])+?</h[1-2]>" .Content }}
 <!-- at least one header to link to -->
 {{ $has_headers := ge (len $headers) 1 }}
 <!-- a post can explicitly disable Table of Contents with toc: false -->
@@ -9,7 +9,14 @@
     <h4 class="text-muted">Table of Contents</h4>
     {{ range $headers }}
     {{ $header := . }}
-    {{ range first 1 (findRE "<h[1-6]" $header 1) }}
+
+    {{ $ids := findRE "id=.([^'\"]+)." $header}}
+
+    {{ if eq 1 (len $ids) }}
+
+    {{ $anchorId := substr (index $ids 0 | replaceRE "id=." "") 0 -1 }}
+    
+    {{ range first 1 (findRE "<h[1-2]" $header 1) }}
     {{ range findRE "[1-6]" . 1 }}
     {{ $next_heading := (int .) }}
     <!-- generate li array of the proper depth -->
@@ -17,7 +24,6 @@
     <ul class="toc-h{{ . }}">
         {{end}}
         {{ $base := ($.Page.File.LogicalName) }}
-        {{ $anchorId := ($header | plainify | anchorize | htmlEscape | urlize) }}
         {{ $href := delimit (slice $base $anchorId) "#" | string }}
         <a href="{{ relref $.Page $href }}">
             <li>{{ $header | plainify | htmlEscape }}</li>
@@ -25,6 +31,8 @@
         <!-- close list -->
         {{ range seq $next_heading }}
     </ul>
+
+    {{end}}
     {{end}}
     {{end}}
     {{end}}
