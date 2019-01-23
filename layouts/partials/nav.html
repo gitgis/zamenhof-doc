@@ -1,5 +1,5 @@
 {{ $mainDir := replaceRE "(/[^/]*)/.*" "$1/" $.URL }}
-{{ $indexName := replaceRE "/([^/]*)/.*" "$1" $.URL }}
+{{ $indexName := replaceRE "/([^/]*)/([^/]*)/.*" "$2" $.URL }}
 
 {{ $mainUrl := replaceRE "(/[^/]*)(/[^/]*)/.*" "$1/$2/" $.URL }}
 
