@@ -73,6 +73,12 @@ ol {
 }
 ol {
     list-style: none;
+    list-style-position: inside;
+}
+
+ol > li {
+    position: relative;
+    padding-left: 10px;
 }
 
 ol > li:before {
@@ -81,8 +87,8 @@ ol > li:before {
 
     display: inline-block;
 
-    position: relative;
-    left: -5px;
+    position: absolute;
+    left: -20px;
     width: 19px;
     height: 19px;
     padding: 4px 0;
@@ -97,6 +103,10 @@ ol > li:before {
     font-size: 13px;
     font-weight: 500;
 
+}
+
+ol > li > ul {
+    padding-left: 4px;
 }
 
 ul.colored-list {
