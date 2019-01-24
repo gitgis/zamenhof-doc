@@ -87,9 +87,13 @@
                 performSearch(q, form.getAttribute("data-index"), mainDir);
             }
         });
+
+        window.addEventListener("hashchange", function (event) {
+            if ((event.oldURL.indexOf("#/search=") > -1) && (event.newURL.indexOf("#/search=") == -1)) {
+                window.location.reload();
+            }
+        }, false);
     });
-
-
 
 })();
 
